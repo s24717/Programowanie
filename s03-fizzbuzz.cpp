@@ -1,10 +1,10 @@
 #include <iostream>
-
+int a;
 auto main(int argc, char* argv[]) -> int
 {
+	a = std::stoi(argv[1]);
 	
-	
-	for(int i=1; i<=argv[1]; i++)
+	for(int i=1; i<=a; i++)
 	{
 		if(i%3==0 && i%5==0)
 		{
