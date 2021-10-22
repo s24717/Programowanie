@@ -4,16 +4,14 @@
 std::string haslo;
 std::string a;
 
-int main()
+auto main() -> int
 {
 	std::cout << "Witam na naszej stronie!!" << "\n";
-	std::cout << "Podaj Haslo: ";
-	std::cin >> haslo;
-	std::cout << "Podaj Ponownie Haslo:" << "\n";
-	while(a!=haslo)
+	do
 	{	
-		std::cout << "Haslo: "; std::cin >> a;
+		std::cout << "Haslo: "; std::getline(std::cin, a);
 	}
+	while(a!="student");
 	std::cout << "Podales poprawne ponowne haslo"<< "\n";
 	return 0;
 }
