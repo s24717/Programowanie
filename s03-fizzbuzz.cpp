@@ -1,14 +1,10 @@
 #include <iostream>
 
-
-int a;
-
-int main()
+auto main(int argc, char* argv[]) -> int
 {
-	std::cout << "Podaj liczbe: ";
-	std::cin >> a;
 	
-	for(int i=1; i<=a; i++)
+	
+	for(int i=1; i<=argv[1]; i++)
 	{
 		if(i%3==0 && i%5==0)
 		{
