@@ -1,13 +1,15 @@
 #include <iostream>
+#include <string>
 
-int liczba;
-
-int main()
+std::string liczba;
+int a;
+auto main(int argc, char* argv[]) -> int
 {
-	std::cout << "Podaj liczbe: " << "\n";
-	std::cin >> liczba;
+
 	
-	for(int i=liczba; i>-1; i=i-1)
+	a = std::stoi(argv[1]);
+	
+	for(int i=a; i>-1; i=i-1)
 	{
 		std::cout << i << "..." << "\n";
 	}
