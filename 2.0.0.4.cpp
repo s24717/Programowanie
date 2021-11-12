@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-int a;
 
 auto ask_user_for_integer(std::string const prompt) -> int
 {
@@ -13,40 +12,42 @@ auto ask_user_for_integer(std::string const prompt) -> int
 	return std::stoi(value);
 }
 
+int a;
+int x=0;
+int c;
+
 int main()
 {
-	std::cout << "Pamietaj liczba pierwsza jest wieksza od 1!";
+	
 	auto a = ask_user_for_integer("Podaj liczbe: ");
 	
-	if(a>1)
-	{
 	
-		for(int i=2; i<=a;i++)
+	if(a>1 && a!=0)
+	{
+		for(int i=2; i<a;i++)
 		{	
-			int x = a % i;
-			if(x!=0)
+			c=a%i;
+			
+			if(c==0)
 			{
-				
+				std::cout << "to nie jest liczba pierwsza";
+				break;	
 			}
-			else
+			else if(c!=0)
 			{
-				break;
+				x=x + 1;
 			}
 		}
-			
+		
+		if(x==a-2)
+		{
+			std::cout << "to jest liczba pierwsza";
+		}
+	
 		
 	
-		if(x==0)
-		{
-			std::cout << "To jest liczba pierwsza";
-		}
-		else
-		{
-			std::cout << "To nie jest liczba pierwsza";
-		}
-	
+		
 	}
-	
 	
 	
 
