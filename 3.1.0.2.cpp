@@ -5,7 +5,7 @@ int tab[100];
 
 void tablica(int zmienna, int zmienna2)
 {
-    for(int i=zmienna2;i<=zmienna+zmienna2;i++)
+    for(int i=zmienna2;i<zmienna+zmienna2;i++)
     {   
         tab[i] = i;
         std::cout << tab[i] << "\n";
