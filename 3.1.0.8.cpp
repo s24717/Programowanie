@@ -33,7 +33,7 @@ auto main(int argc, char* argv[]) -> int
 {
 	
 	std::cout << "o to tablica nasza kochana: " << "\n";
-	sort_asc(a);
+	sort_desc(a);
 	
 	
 	
