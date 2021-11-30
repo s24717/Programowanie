@@ -3,7 +3,7 @@
 int a;
 int tab[100];
 
-void tablica(int zmienna)
+void init(int zmienna)
 {
     for(int i=0;i<=a;i++)
     {
@@ -16,7 +16,7 @@ auto main(int argc, char* argv[]) -> int
 {
 	a = std::stoi(argv[1]);
 
-    tablica(a);
+    init(a);
 
 	return 0;
 }
