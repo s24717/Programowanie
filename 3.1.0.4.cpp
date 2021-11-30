@@ -5,7 +5,7 @@ int a=3;
 int liczba=0;
 int tablica[10] = {42, 9 , -1 , 18, 59, 3, 101, 31, 72, 12};
 
-void wynik(int b)
+void amin(int b)
 {
 	for(int i=0;i<=9;i++)
 	{
@@ -39,7 +39,7 @@ auto main(int argc, char* argv[]) -> int
 {
 	
 	std::cout << "najmniejsza liczba w tablicy to:";
-	wynik(a);
+	amin(a);
 	
 	return 0;
 }
