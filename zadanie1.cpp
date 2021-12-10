@@ -38,6 +38,7 @@ auto main(int argc, char* argv[]) -> int
 			{
 				std::cout << tab[j] << " ";
 			}
+			std::cout << "\n";
 		}
 	}
 	
