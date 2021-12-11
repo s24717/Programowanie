@@ -1,15 +1,15 @@
 #include <iostream>
 #include <string>
 
-void is_even(int b)
+auto is_even(int b)
 {
 	if(b%2==0)
 	{
-		std::cout << "True" << "\n";
+		return true;
 	}
 	else
 	{
-		std::cout << "False" << "\n";
+		return false;
 	}
 }
 
@@ -21,7 +21,7 @@ auto main(int argc, char* argv[]) -> int
 	std::cout << "Podaj Liczbe: " << "\n";
 	std::cin >> a;
 	
-	is_even(a);
+	std::cout << is_even(a) << "\n";
 	
 	return 0;
 }
