@@ -28,35 +28,28 @@ void box_print(std::string *tab)
                 std::cout << "*";
 
             }
-            std::cout << "\n";
+            
         }
-        else if(i<6)
+        else
         {   
-            for(int j=0;j<x+2;j++)
-            {   
-                if(j==0 || j==x+1)
-                {
-                    std::cout << "*";
-                }
-                else if(tab[k].length() == x)
-                {
-                    std::cout << tab[k] << "*";
-                }
-                else if(tab[k].length() < x)
-                {   
-                    std::cout << tab[k];
-                    for(int c=0;c<x-tab[k].length();c++)
-                    {
-                        std::cout << " ";
-
-                    }
-                }
-                k=k+1;
-                std::cout << "\n";
+            std::cout << "*";
+            if(tab[k].length() == x )
+            {
+                std::cout << tab[k] << "*";
             }
-            
-            
+            else
+            {  
+                std::cout << tab[k];
+                for(int c=0;c<x-tab[k].length();c++)
+                {
+                    std::cout << " ";
+                }
+                std::cout << "*";
+            }
+            k=k+1;
         }
+        
+        std::cout << "\n";
     }
 
 }
