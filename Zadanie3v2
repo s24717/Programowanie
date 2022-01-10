@@ -1,0 +1,44 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+
+auto dot_product(std::vector<float> tablica1,std::vector<float> tablica2)
+{
+    if(tablica1.size()==tablica2.size())
+    {
+        float suma=0;
+        for(int i=0;i<tablica1.size();i++)
+        {
+            suma = suma + (tablica1[i]*tablica2[i]);
+        }
+        return suma;
+    }
+    else
+    {
+        std::cout << "Tablice nie maja tych samych wymiarow" << std::endl;
+
+    }
+
+
+
+}
+
+
+
+
+
+int main()
+{
+
+    std::vector<float> tab1 = {1,2,3,4,5};
+    std::vector<float> tab2 = {5,4,3,2,1};
+
+
+    std::cout << dot_product(tab1,tab2) << std::endl;
+
+
+
+
+    return 0;
+}
