@@ -1,0 +1,39 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+
+std::vector<std::string> lista;
+std::stringstream ss;
+
+void split(std::string napis)
+{
+
+    ss.str(napis);
+
+    std::string slowo="";
+
+    while(ss >> slowo)
+    {
+        lista.push_back(slowo);
+    }
+
+
+}
+
+int main()
+{
+
+
+    std::string zdanie;
+    std::cout<<"Podaj tekst: ";
+    std::getline(std::cin,zdanie);
+    split(zdanie);
+
+
+    for(int i=0;i<lista.size();i++)
+    {
+        std::cout << ",," <<lista[i] << "''";
+    }
+    return 0;
+}
