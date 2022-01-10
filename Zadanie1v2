@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+std::string a;
+float b;
+
+
+
+auto average_of(std::vector<float> a, int b)
+{
+    float c;
+    for(int i=0;i<b;i++)
+    {
+        c=c+a[i];
+    }
+    return c/b;
+}
+
+
+
+
+
+int main()
+{
+
+    std::vector<float> rzeczywiste;
+
+
+
+    while(true)
+    {
+        std::cout << "Wpisz ,,Tak'' jesli chcesz dodac liczbe do vektora, ,,Nie'' jesli chcesz wyjsc" << std::endl;
+        std::cin >> a;
+        if(a=="Tak")
+        {
+            std::cout << "Dodaj liczbe: " << std::endl;
+            std::cin >> b;
+            rzeczywiste.push_back(b);
+        }
+        else if(a=="Nie")
+        {
+            break;
+        }
+        else
+        {
+            std::cout << "wpisales niedozwolony znak/slowo!" << std::endl;
+        }
+    }
+
+
+    std::cout << "Twoja srednia z vektora to : " << average_of(rzeczywiste, rzeczywiste.size()) << std::endl;
+
+
+
+
+    return 0;
+}
