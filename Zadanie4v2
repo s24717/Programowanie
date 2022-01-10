@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+struct student
+{
+   std::string imie;
+   std::string nazwisko;
+   std::vector<float> oceny;
+   student(std::string a,std::string b,std::vector<float> c)
+   {
+       imie = a;
+       nazwisko = b;
+       oceny = c;
+   }
+};
+
+auto average_of(student kucharz)
+{
+
+
+    kucharz.oceny;
+    float suma = 0;
+    for(int i=0;i<kucharz.oceny.size();i++)
+    {
+        suma = suma + kucharz.oceny[i];
+    }
+
+    return suma/kucharz.oceny.size();
+
+
+}
+
+
+
+int main()
+{
+    std::vector <float> oceny_student = {2,2,3.5,4};
+    student st1("Konrad","Krok",oceny_student); //pierwsze uzycie konstruktora w zyciu
+
+
+    std::cout <<  average_of(st1) << std::endl;
+
+
+
+    return 0;
+}
