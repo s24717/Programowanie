@@ -1,0 +1,71 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+
+
+int a;
+
+
+
+auto filter_palidromes(std::vector<std::string> tablica)
+{
+    std::vector<std::string> zwrot;
+    int x = tablica.size();
+
+    for(int i=0;i<x;i++)
+    {
+        int suma=0;
+        int y = tablica[i].length();
+        for(int j=0;j<y;j++)
+        {
+            if(tablica[i][j]==tablica[i][y-1-j])
+            {
+                suma=suma+1;
+            }
+        }
+        if(suma==y)
+        {
+            zwrot.push_back(tablica[i]);
+        }
+    }
+
+
+    return zwrot;
+
+
+}
+
+
+
+
+
+
+
+
+int main()
+{
+
+    std::vector<std::string> tabela = {"bob","anna","dawidek","sos","grzebien", "anna"};
+
+
+
+   filter_palidromes(tabela);
+
+
+    for(int i=0;i<4;i++)
+    {
+        std::cout << filter_palidromes(tabela)[i]<< std::endl;
+    }
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
