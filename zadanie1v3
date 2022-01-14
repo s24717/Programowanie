@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+class Punkt
+{
+  public:
+  int x;
+  int y;
+  Punkt(int a,int b)
+  {
+      x=a;
+      y=b;
+  }
+};
+
+
+int main()
+{
+    
+    Punkt ob1(1,2);
+    Punkt ob2(5,3);
+    
+    std::cout << "Wspolrzedne punkty to " << "(" << ob1.x << "," << ob1.y << ")" << std::endl;
+    std::cout << "Wspolrzedne punkty to " << "(" << ob2.x << "," << ob2.y << ")" << std::endl;
+    
+    
+    
+    return 0;
+}
