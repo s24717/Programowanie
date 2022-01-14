@@ -5,24 +5,68 @@ using namespace std;
 class Punkt
 {
   public:
+  
   int x;
   int y;
-  Punkt(int a,int b)
+  void setXY(int k,int z)
   {
-      x=a;
-      y=b;
+      x=k;
+      y=z;
+  }
+  void setXYZ(Punkt obiekt)
+  {
+      x=obiekt.x;
+      y=obiekt.y;
+  }
+  
+  Punkt getXY(int o,int p)
+  {
+      Punkt obiekcik;
+      obiekcik.setXY(o,p);
+      return obiekcik;
+      
+  }
+  
+  void show()
+  {
+    std::cout << "Wspolrzedne punkty to " << "(" << x << "," << y << ")" << std::endl;
+  }
+  
+  int getX()
+  {
+      return x;
+  }
+  
+  int getY()
+  {
+      return y;
   }
 };
 
 
 int main()
 {
+    //tutaj tworzymy obiekty
+    Punkt ob1;
+    Punkt ob2;
     
-    Punkt ob1(1,2);
-    Punkt ob2(5,3);
+    ob1.setXY(1,2);
+    ob2.setXY(5,3);
+    ob2.setXYZ(ob1); //w tym momencie obiekt drugi zmienil wartosci 5,3 na 
+               //wartosci ktore ma nasz obiekt 1 czyli obiekt2 ma 1,2
+                    //bo wyslalismy do niego klase po przez funkcje setXYZ
     
-    std::cout << "Wspolrzedne punkty to " << "(" << ob1.x << "," << ob1.y << ")" << std::endl;
-    std::cout << "Wspolrzedne punkty to " << "(" << ob2.x << "," << ob2.y << ")" << std::endl;
+
+    //tutaj pokazujemy nasze Wspolrzedne jakie maja wartosci po przez metode w klasie
+    ob1.show();
+    ob2.show();
+    ob2.getXY(5,3).show(); 
+    
+    
+    //zadanie 4
+    std::cout << ob1.getX() << " " << ob1.getY() << std::endl;
+    
+    
     
     
     
