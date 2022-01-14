@@ -5,9 +5,20 @@ using namespace std;
 class Punkt
 {
   public:
-  
   int x;
   int y;
+  
+  Punkt(int i,int j) //konstruktor
+  {
+      x=i;
+      y=j;
+  }
+  
+  Punkt()
+  {
+      
+  }
+  
   void setXY(int k,int z)
   {
       x=k;
@@ -55,12 +66,16 @@ int main()
     ob2.setXYZ(ob1); //w tym momencie obiekt drugi zmienil wartosci 5,3 na 
                //wartosci ktore ma nasz obiekt 1 czyli obiekt2 ma 1,2
                     //bo wyslalismy do niego klase po przez funkcje setXYZ
-    
+    Punkt ob3(3,4);
+    //stworzylo obiekt za pomoca konstruktora
 
     //tutaj pokazujemy nasze Wspolrzedne jakie maja wartosci po przez metode w klasie
     ob1.show();
     ob2.show();
-    ob2.getXY(5,3).show(); 
+    ob2.getXY(5,3).show();
+    ob3.show();
+    
+    
     
     
     //zadanie 4
