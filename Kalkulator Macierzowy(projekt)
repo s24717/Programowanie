@@ -1,0 +1,234 @@
+#include <iostream>
+#include <cstdlib>
+
+//struktura tworzaca macierz
+struct macierz
+{   
+    int w; //zmienna odpowiedzialna za wiersze
+    int k; //zmienna odpowiedzialna za kolumny
+    float tab1[10][10]; //zakladam ze macierz nie bedzie wieksza niz 10x10
+
+    
+    void dodaj_wartosci()
+    {   
+        std::cout << "Podaj ile chcesz zeby twoja macierz miala Wierszy: " << std::endl;
+        std::cin >> w;
+        std::cout << "Podaj ile chcesz zeby twoja macierz miala Kolumn : " << std::endl;
+        std::cin >> k;
+        std::cout << "Podaj wartosci do swojej macierzy: " << std::endl;
+        if(w==0 || k==0)
+        {   
+            std::cout << "Error macierz nie moze miec wartosci zero ani w kolumnie ani w wierszu";
+            exit(0);
+        }
+
+        for(int i=0;i<w;i++)
+        {   for(int j=0;j<k;j++)
+            {
+                std::cin >> tab1[i][j];
+            }    
+        }
+    }
+        
+};
+
+
+
+
+//zmienne do funkcji main
+int wybor;
+
+
+
+
+
+
+
+int main()
+{   
+    std::cout << "           Kalkulator Macierzowy!      " << std::endl;
+	std::cout << "--------------------------------------------" << std::endl;
+	std::cout << "   Przed wykonaniem operacji musisz stworzyc macierz!" << std::endl;
+    std::cout << "--------------------------------------------------------" << std::endl;
+	struct macierz pierwsza;
+    pierwsza.dodaj_wartosci();
+    system( "cls" );
+	std::cout << "         Wybierz co chcesz zrobic:" << std::endl;
+	std::cout << "1.Dodawanie Macierzy    2.Odejmowanie Macierzy" << std::endl;
+	std::cout << "3.Transpozycja Macierzy 4.Mnozenie Macierzy" << std::endl;
+    std::cout << "Twoj wybor to: ";
+    std::cin >> wybor;
+
+	switch(wybor)
+	{
+		case 1:
+		{
+			struct macierz druga;
+            druga.dodaj_wartosci();
+
+            if(pierwsza.k != druga.k || pierwsza.w != druga.w)
+            {
+                std::cout << "Error, macierz musi byc tego samego wymiaru co macierz do ktorej chcesz dodac.";
+                exit(0);
+            }
+
+            system( "cls" );
+
+            std::cout << "Wynik dodawania macierzy to macierz: " << std::endl;
+            
+
+            for(int i=0;i<pierwsza.w;i++)
+            {   for(int j=0;j<pierwsza.k;j++)
+                {
+                    if(j==0 || j==pierwsza.k-1)
+			        {   
+                        if(j==0 && j==pierwsza.k-1)
+                        {
+                            std::cout << "|" << pierwsza.tab1[i][j] + druga.tab1[i][j] << "|";
+                        }
+                        else if(j==pierwsza.k-1)
+                        {
+                            std::cout << pierwsza.tab1[i][j] + druga.tab1[i][j] << "|";
+                        }
+                        else if(j==0)
+                        {
+                            std::cout << "|" << pierwsza.tab1[i][j] + druga.tab1[i][j] << " ";
+                        }
+				        
+			        }
+			        else if(j<pierwsza.k-1)
+			        {
+				        std::cout << pierwsza.tab1[i][j] + druga.tab1[i][j] << " ";
+			        }
+                } 
+                std::cout << "\n";   
+            }
+            
+			break;
+		}
+		case 2:
+		{
+			struct macierz druga;
+            druga.dodaj_wartosci();
+
+            if(pierwsza.k != druga.k || pierwsza.w != druga.w)
+            {
+                std::cout << "Error, macierz musi byc tego samego wymiaru co macierz do ktorej chcesz dodac.";
+                exit(0);
+            }
+
+            system( "cls" );
+
+            std::cout << "Wynik odejmowania macierzy to macierz: " << std::endl;
+            
+
+            for(int i=0;i<pierwsza.w;i++)
+            {   for(int j=0;j<pierwsza.k;j++)
+                {
+                    if(j==0 || j==pierwsza.k-1)
+			        {   
+                        if(j==0 && j==pierwsza.k-1)
+                        {
+                            std::cout << "|" << pierwsza.tab1[i][j] - druga.tab1[i][j] << "|";
+                        }
+                        else if(j==pierwsza.k-1)
+                        {
+                            std::cout << pierwsza.tab1[i][j] - druga.tab1[i][j] << "|";
+                        }
+                        else if(j==0)
+                        {
+                            std::cout << "|" << pierwsza.tab1[i][j] - druga.tab1[i][j] << " ";
+                        }
+				        
+			        }
+			        else if(j<pierwsza.k-1)
+			        {
+				        std::cout << pierwsza.tab1[i][j] - druga.tab1[i][j] << " ";
+			        }
+			                      
+                } 
+                std::cout << "\n";   
+            }
+			break;
+		}
+		case 3:
+		{   
+            std::cout << "Twoja Macierz po transpozycji wyglada tak: " << std::endl;
+            
+			for(int i=0;i<pierwsza.w;i++)
+            {   for(int j=0;j<pierwsza.k;j++)
+                {
+                    if(j==0 || j==pierwsza.k-1)
+			        {   
+                        if(j==0 && j==pierwsza.k-1)
+                        {
+                            std::cout << "|" << pierwsza.tab1[j][i] << "|";
+                        }
+                        else if(j==pierwsza.k-1)
+                        {
+                            std::cout << pierwsza.tab1[j][i] << "|";
+                        }
+                        else if(j==0)
+                        {
+                            std::cout << "|" << pierwsza.tab1[j][i] << " ";
+                        }
+				        
+			        }
+			        else if(j<pierwsza.k-1)
+			        {
+				        std::cout << pierwsza.tab1[j][i] << " ";
+			        }
+			                      
+                } 
+                std::cout << "\n";   
+            }
+			break;
+			
+		}
+		case 4:
+		{
+			
+            struct macierz druga;
+            druga.dodaj_wartosci();
+
+            if(pierwsza.k != druga.w)
+            {
+                std::cout << "Error, zeby pomnozyc macierze to macierz wejsciowa musi miec tyle samo kolumn co wiersz ma druga przez ktora mnozysz";
+                exit(0);
+            }
+
+            system( "cls" ); 
+            std::cout << "Wynik mnozenia twoich macierzy to: " << std::endl;
+            
+            for(int i=0;i<pierwsza.w;i++)
+            {   
+                for(int k=0;k<druga.k;k++)
+                {   
+                    float suma = 0;
+
+                    for (int j=0; j<pierwsza.k; j++)
+                    {   
+                        suma = suma + pierwsza.tab1[i][j] * druga.tab1[j][k];
+                        
+                    }
+
+                    std::cout << suma << " ";
+
+                    
+                }
+
+                
+
+                std::cout << "\n";   
+            }  
+
+			break;
+		}
+    }
+    
+}
+
+
+
+
+
