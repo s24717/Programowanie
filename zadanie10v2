@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <string>
+
+std::string a;
+int main()
+{
+    
+   
+
+    std::vector<std::string> tab;
+    
+    while(true)
+    {
+        std::cout << "Podaj 2 litery ktore beda zakresem" << "\n";
+        std::getline(std::cin,a);
+        
+        if(a=="stop")
+        {
+            break;
+        }
+        
+        tab.push_back(a);
+       
+    }
+    
+    for(int i=0;i<tab.size();i++)
+    {   if(int(tab[i][0]) > int(tab[i][2]))
+        {
+            for(int j=int(tab[i][0]);j<=int(tab[i][2]);j++)
+            {
+                std::cout << char(j);
+            }
+        }
+        else
+        {
+           for(int j=int(tab[i][2]);j>=int(tab[i][0]);j--)
+            {
+                std::cout << char(j);
+            } 
+        }
+    }
+   
+	
+	
+	return 0;
+}
