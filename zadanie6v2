@@ -1,10 +1,11 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <string>
 
-class Student
+struct Student
 {
-    public:
+    
     std::string imie;
     float srednia;
     Student(std::vector<int> tab0,std::string b)
@@ -21,9 +22,10 @@ class Student
 };
 
 
-float get_best_student(std::vector<Student> a)
+void get_best_student(std::vector<Student> a)
 {   
     float naj = 0;
+    std::string najs;
     
     for(int i=0;i<a.size();i++)
     {
@@ -31,10 +33,11 @@ float get_best_student(std::vector<Student> a)
         if(a[i].srednia >= naj)
         {
             naj = a[i].srednia;
+            najs = a[i].imie;
         }
     }
     
-    return naj;
+    std::cout << "Najlepsza srednia nalezy do: " << najs << " " << "i wynosi " << naj << "\n";
 }
 
 
@@ -58,7 +61,7 @@ int main()
 	
 	
 	
-	std::cout << "Najlepsza srednia to: " << get_best_student(x) << "\n";
+	get_best_student(x);
 	
 	
 	
