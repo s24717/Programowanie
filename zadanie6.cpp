@@ -2,22 +2,23 @@
 #include <string>
 
 
-auto is_divisible(int y,int z)
-{	
-	int c = y%z;
-	return c;
+bool is_divisible(int y,int z)
+{	   
+    if(y%z==0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
-auto is_even(int x)
-{
-	if(x%2==0)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+bool is_even(int x)
+{   
+    
+	return is_divisible(x, 2);
+
 }
 
 int a,b;
@@ -25,11 +26,18 @@ int a,b;
 auto main(int argc, char* argv[]) -> int
 {	
 	
-	std::cout << "Podaj  2 liczby: " << "\n";
+	std::cout << "Podaj liczbe: " << "\n";
 	std::cin >> a;
-	std::cin >> b;
 	
-	std::cout << is_even(is_divisible(a, b)) << "\n";
+	
+	if(is_even(a)==1)
+    {
+        std::cout <<  "Liczba jest podzielna przez 2" << "\n";
+    }
+    else
+    {
+        std::cout << "Liczba nie jest podzielna przez 2" << "\n";
+    }
 	
 	return 0;
 }
