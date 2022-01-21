@@ -1,0 +1,85 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <string>
+
+struct Student
+{
+    
+    std::string imie;
+    float srednia;
+    Student(std::vector<int> tab0,std::string b)
+    {
+        float suma=0;
+        for(int i=0;i<tab0.size();i++)
+        {
+            suma=suma + tab0[i];
+        }
+        imie = b;
+        srednia=(suma/tab0.size());
+    }
+    
+};
+
+
+void get_best_student(std::vector<Student> a)
+{   
+    float naj = 0;
+    std::string najs;
+    
+    for(int i=0;i<a.size();i++)
+    {
+        
+        if(a[i].srednia >= naj)
+        {
+            naj = a[i].srednia;
+            najs = a[i].imie;
+        }
+    }
+    
+    std::cout << "Najlepsza srednia nalezy do: " << najs << " " << "i wynosi " << naj << "\n";
+}
+
+struct group
+{
+    std::string nazwa;
+    std::vector<Student> studenci;
+    group(std::string a,std::vector<Student> b)
+    {
+        nazwa = a;
+        studenci =b;
+    }
+};
+
+
+void dodawanie_student(group c, Student d)
+{
+    c.studenci.push_back(d);
+}
+
+int main()
+{	
+    std::vector<Student> x;
+    
+    std::vector<int> tab1 = {4,3,5};
+    std::vector<int> tab2 = {1,2,5};
+    std::vector<int> tab3 = {1,3,3};
+    
+	Student ob1(tab1, "Konrad");
+	Student ob2(tab2, "Janusz");
+	Student ob3(tab3, "Dawidek");
+	
+	x.push_back(ob1);
+	x.push_back(ob2);
+	x.push_back(ob3);
+	
+	
+	
+	
+	
+	get_best_student(x);
+	
+	
+	
+	return 0;
+}
